@@ -11,7 +11,7 @@ import Foundation
 struct QuoteData: Codable {
     
     let content : String
-    //let author : String
+    let author : String
 }
 
 

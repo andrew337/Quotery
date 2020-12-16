@@ -9,5 +9,5 @@ import Foundation
 
 struct QuoteModel {
     let quoteText : String
-    //let authorText: String
+    let authorText: String
 }

@@ -18,6 +18,7 @@ class Home: UIViewController, QuoteManagerDelegate {
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var authorLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -44,6 +45,7 @@ class Home: UIViewController, QuoteManagerDelegate {
     func didUpdateQuote(_ quoteManager: QuoteManager, quote: QuoteModel) {
         DispatchQueue.main.async {
             self.quoteLabel.text = quote.quoteText
+            self.authorLabel.text = quote.authorText
         }
         
     }

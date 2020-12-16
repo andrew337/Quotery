@@ -65,8 +65,9 @@ struct QuoteManager {
         do {
             let decodedData = try decoder.decode([QuoteData].self, from: quoteData)
             let quote = decodedData[0].content
+            let author = decodedData[0].author
             
-            let quoteModel = QuoteModel(quoteText: quote)
+            let quoteModel = QuoteModel(quoteText: quote, authorText: author)
             //print(quoteModel)
             return quoteModel
         } catch {
