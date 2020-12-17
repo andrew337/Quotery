@@ -68,6 +68,9 @@ struct QuoteManager {
             let author = decodedData[0].author
             
             let quoteModel = QuoteModel(quoteText: quote, authorText: author)
+            
+            UserDefaults.standard.setValue(quote, forKey: Constants.Defaults.LATEST_QUOTE)
+            UserDefaults.standard.setValue(author, forKey: Constants.Defaults.LATEST_AUTHOR)
             //print(quoteModel)
             return quoteModel
         } catch {

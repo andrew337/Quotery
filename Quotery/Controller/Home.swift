@@ -11,6 +11,7 @@ import FontAwesome_swift
 class Home: UIViewController, QuoteManagerDelegate {
     
     var quoteManager = QuoteManager()
+    let userDefaults = UserDefaults()
 
     
     
@@ -32,7 +33,10 @@ class Home: UIViewController, QuoteManagerDelegate {
         nextButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 21, style: .solid)
         nextButton.setTitle(String.fontAwesomeIcon(name: .arrowRight), for: .normal)
         
-        quoteLabel.text = "jfhhghs ghgggggggg gjpjsgjdgkdsjgijdsipgj gjpdsjgpidsjgpidsjg gjipsdjipgjpsd opjgsjpisgjps pijgpsjhpigj "
+        if userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) != nil {
+            quoteLabel.text = userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) as? String
+            authorLabel.text = userDefaults.value(forKey: Constants.Defaults.LATEST_AUTHOR) as? String
+        }
     
     }
     
