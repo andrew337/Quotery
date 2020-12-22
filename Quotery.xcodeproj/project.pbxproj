@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5EB8D0D2F4465C75E23A6A8B /* Pods_Quotery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55BEE33844DEAD9A7C57883 /* Pods_Quotery.framework */; };
+		840063AC258BE4C400AD5EF4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840063AB258BE4C400AD5EF4 /* Settings.swift */; };
+		840063AF258BEC8100AD5EF4 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840063AE258BEC8100AD5EF4 /* SettingsCell.swift */; };
+		840063B2258D88F800AD5EF4 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840063B1258D88F800AD5EF4 /* SettingsSection.swift */; };
 		8489C90D25771214005096FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489C90C25771214005096FF /* AppDelegate.swift */; };
 		8489C90F25771214005096FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489C90E25771214005096FF /* SceneDelegate.swift */; };
 		8489C91125771214005096FF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489C91025771214005096FF /* Home.swift */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		264F33B9963750459B337111 /* Pods-Quotery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quotery.debug.xcconfig"; path = "Target Support Files/Pods-Quotery/Pods-Quotery.debug.xcconfig"; sourceTree = "<group>"; };
 		49A7D9F70805AB800E6ED533 /* Pods-Quotery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quotery.release.xcconfig"; path = "Target Support Files/Pods-Quotery/Pods-Quotery.release.xcconfig"; sourceTree = "<group>"; };
+		840063AB258BE4C400AD5EF4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		840063AE258BEC8100AD5EF4 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		840063B1258D88F800AD5EF4 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		8489C90925771214005096FF /* Quotery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8489C90C25771214005096FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8489C90E25771214005096FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				8489C91225771214005096FF /* Main.storyboard */,
+				840063AE258BEC8100AD5EF4 /* SettingsCell.swift */,
 				8489C91725771215005096FF /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -107,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				8489C91025771214005096FF /* Home.swift */,
+				840063AB258BE4C400AD5EF4 /* Settings.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 				84E7C9AD2580605D00ECF2F2 /* QuoteData.swift */,
 				84E7C9B02586D43F00ECF2F2 /* QuoteModel.swift */,
 				8489C926257720C2005096FF /* Utils.swift */,
+				840063B1258D88F800AD5EF4 /* SettingsSection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,9 +256,12 @@
 				84E7C9AE2580605D00ECF2F2 /* QuoteData.swift in Sources */,
 				8489C9382579CDF8005096FF /* QuoteManager.swift in Sources */,
 				8489C91125771214005096FF /* Home.swift in Sources */,
+				840063B2258D88F800AD5EF4 /* SettingsSection.swift in Sources */,
 				8489C90D25771214005096FF /* AppDelegate.swift in Sources */,
+				840063AF258BEC8100AD5EF4 /* SettingsCell.swift in Sources */,
 				8489C90F25771214005096FF /* SceneDelegate.swift in Sources */,
 				8489C927257720C2005096FF /* Utils.swift in Sources */,
+				840063AC258BE4C400AD5EF4 /* Settings.swift in Sources */,
 				84E7C9B12586D43F00ECF2F2 /* QuoteModel.swift in Sources */,
 				84EF55A6258AB1F900C7CFFA /* Constants.swift in Sources */,
 			);
