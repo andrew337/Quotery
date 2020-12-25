@@ -53,7 +53,7 @@ extension Settings: UITableViewDelegate, UITableViewDataSource {
         guard let section = SettingsSection(rawValue: section) else {return 0}
         
         switch section {
-        case .Social: return SocialOptions.allCases.count
+        //case .Social: return SocialOptions.allCases.count
         case .Communications: return CommunicationsOptions.allCases.count
         }
     }
@@ -88,24 +88,11 @@ extension Settings: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsCell
         cell.contentView.isUserInteractionEnabled = false
-        guard let section = SettingsSection(rawValue: indexPath.section) else {return UITableViewCell()}
-        
-        switch section {
-        case .Social:
-            let social = SocialOptions(rawValue: indexPath.row)
-            cell.textLabel?.text = social?.description
-        case .Communications:
+       
             let communications = CommunicationsOptions(rawValue: indexPath.row)
             cell.textLabel?.text = communications?.description
-        }
+        
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped")
-    }
-    
-    
-    
 }

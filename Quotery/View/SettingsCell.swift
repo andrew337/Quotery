@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import UserNotifications
+
 
 class SettingsCell: UITableViewCell {
     
