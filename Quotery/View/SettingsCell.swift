@@ -33,10 +33,17 @@ class SettingsCell: UITableViewCell {
         }
     
     @objc func handleSwitchAction(sender: UISwitch) {
-        if sender.isOn {
-            print("Is on")
-        } else {
-            print("Is off")
+        switch sender.tag {
+        case 0:
+            if sender.isOn {
+                print("on")
+            } else {
+                print("off")
+            }
+        case 1:
+            print("Button 2")
+        default:
+            print("Nothing")
         }
     }
 

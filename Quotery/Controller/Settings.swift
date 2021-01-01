@@ -88,7 +88,7 @@ extension Settings: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsCell
         cell.contentView.isUserInteractionEnabled = false
-       
+        cell.switchControl.tag = indexPath.row
             let communications = CommunicationsOptions(rawValue: indexPath.row)
             cell.textLabel?.text = communications?.description
         
