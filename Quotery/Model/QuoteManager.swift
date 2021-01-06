@@ -31,7 +31,7 @@ struct QuoteManager {
         let headers = [
             "x-rapidapi-key": "7e5cc04f81mshd0483de70fbc1d5p16b2d4jsnc6d01b111ae9",
             "x-rapidapi-host": "quotes-by-quovoo1.p.rapidapi.com",
-            //"content-type": "application/json"
+            
         ]
         
         request.allHTTPHeaderFields = headers

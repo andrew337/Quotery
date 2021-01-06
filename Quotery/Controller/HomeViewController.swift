@@ -8,7 +8,7 @@
 import UIKit
 import FontAwesome_swift
 
-class Home: UIViewController, QuoteManagerDelegate {
+class HomeViewController: UIViewController, QuoteManagerDelegate {
     
     var quoteManager = QuoteManager()
     let userDefaults = UserDefaults()
@@ -49,7 +49,7 @@ class Home: UIViewController, QuoteManagerDelegate {
     func didUpdateQuote(_ quoteManager: QuoteManager, quote: QuoteModel) {
         DispatchQueue.main.async {
             self.quoteLabel.text = quote.quoteText
-            self.authorLabel.text = quote.authorText
+            self.authorLabel.text = "Author:   \(quote.authorText)"
         }
         
     }
@@ -57,6 +57,16 @@ class Home: UIViewController, QuoteManagerDelegate {
     func didFailWithError(error: Error) {
         print(error)
     }
+    
+    @IBAction func menuButton(_ sender: UIButton) {
+        
+        let vc1 = self.storyboard!.instantiateViewController(identifier: "Settings")
+        let navController = UINavigationController(rootViewController: vc1)
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated: true, completion: nil)
+    
+    }
+    
 }
 
 

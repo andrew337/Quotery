@@ -13,7 +13,7 @@ class SettingsCell: UITableViewCell {
     
     lazy var switchControl: UISwitch = {
         let switchControl = UISwitch()
-        switchControl.isOn = true
+        switchControl.isOn = false
         switchControl.onTintColor = UIColor(red: 55/255, green: 130/255, blue: 250/255, alpha: 1)
         switchControl.translatesAutoresizingMaskIntoConstraints = false
         switchControl.addTarget(self, action: #selector(handleSwitchAction), for: .valueChanged)
@@ -36,9 +36,26 @@ class SettingsCell: UITableViewCell {
         switch sender.tag {
         case 0:
             if sender.isOn {
-                print("on")
+                
+                let center = UNUserNotificationCenter.current()
+                
+                let content = UNMutableNotificationContent()
+                content.title = "Reminder"
+                content.body = "This is a local notification"
+                content.sound = .default
+                
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+                
+                let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
+                
+                center.add(request) { (error) in
+                    if error != nil {
+                        print(error!)
+                    }
+                }
             } else {
-                print("off")
+                let center = UNUserNotificationCenter.current()
+                center.removeAllPendingNotificationRequests()
             }
         case 1:
             print("Button 2")

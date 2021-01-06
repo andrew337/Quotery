@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Settings: UIViewController {
+class SettingsViewController: UIViewController {
     
     private let reuseIdentifier = "SettingsCell"
     
@@ -41,12 +41,20 @@ class Settings: UIViewController {
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.barTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
         navigationItem.title = "Settings"
+        
+        let backButton = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(backToFirst))
+        backButton.tintColor = .black
+        self.navigationItem.leftBarButtonItem = backButton
+    }
+    
+    @objc func backToFirst() {
+        dismiss(animated: true, completion: nil)
     }
     
     
 }
 
-extension Settings: UITableViewDelegate, UITableViewDataSource {
+extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

@@ -19,14 +19,12 @@ enum SettingsSection: Int, CaseIterable, CustomStringConvertible {
 
 enum CommunicationsOptions: Int, CaseIterable, CustomStringConvertible {
     case notifications
-    case Email_Notifications
+   
     
     var description: String {
         switch self {
         case .notifications:
             return "Push Notifications"
-        case .Email_Notifications:
-            return "Email Notifications"
         }
     }
 }
