@@ -36,6 +36,8 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
         if userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) != nil {
             quoteLabel.text = userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) as? String
             authorLabel.text = userDefaults.value(forKey: Constants.Defaults.LATEST_AUTHOR) as? String
+        } else {
+            quoteManager.performRequest()
         }
     
     }
