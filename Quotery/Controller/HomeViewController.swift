@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var favoritesButton: UIButton!
     @IBOutlet weak var authorLabel: UILabel!
     
     
@@ -27,11 +27,12 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
         // Do any additional setup after loading the view.
         
         quoteManager.delegate = self
+        favoritesButton.alpha = 0
         
         menuButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 21, style: .solid)
         menuButton.setTitle(String.fontAwesomeIcon(name: .bars), for: .normal)
-        nextButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 21, style: .solid)
-        nextButton.setTitle(String.fontAwesomeIcon(name: .arrowRight), for: .normal)
+        favoritesButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 21, style: .solid)
+        favoritesButton.setTitle(String.fontAwesomeIcon(name: .star), for: .normal)
         
         if userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) != nil {
             quoteLabel.text = userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) as? String
@@ -43,7 +44,7 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
     }
     
     
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
+    @IBAction func favoritesButtonPressed(_ sender: UIButton) {
         
         quoteManager.performRequest()
     }

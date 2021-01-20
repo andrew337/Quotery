@@ -11,10 +11,12 @@ import UserNotifications
 
 class SettingsCell: UITableViewCell {
     
+    let notifications = Notifications()
+    
     lazy var switchControl: UISwitch = {
         let switchControl = UISwitch()
-        switchControl.isOn = false
-        switchControl.onTintColor = UIColor(red: 55/255, green: 130/255, blue: 250/255, alpha: 1)
+        switchControl.isOn = true
+        switchControl.onTintColor = UIColor(red: 32/255, green: 44/255, blue: 57/255, alpha: 1)
         switchControl.translatesAutoresizingMaskIntoConstraints = false
         switchControl.addTarget(self, action: #selector(handleSwitchAction), for: .valueChanged)
         return switchControl
@@ -37,25 +39,9 @@ class SettingsCell: UITableViewCell {
         case 0:
             if sender.isOn {
                 
-                let center = UNUserNotificationCenter.current()
-                
-                let content = UNMutableNotificationContent()
-                content.title = "Reminder"
-                content.body = "This is a local notification"
-                content.sound = .default
-                
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-                
-                let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
-                
-                center.add(request) { (error) in
-                    if error != nil {
-                        print(error!)
-                    }
-                }
+                notifications.scheduleNotifications()
             } else {
-                let center = UNUserNotificationCenter.current()
-                center.removeAllPendingNotificationRequests()
+                notifications.removeNotifications()
             }
         case 1:
             print("Button 2")

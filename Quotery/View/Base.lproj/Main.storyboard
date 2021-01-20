@@ -37,7 +37,7 @@
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UTg-e0-gz8"/>
+                                            <action selector="favoritesButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UTg-e0-gz8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -59,7 +59,6 @@
                                     <constraint firstAttribute="height" constant="43" id="dFH-pq-vTJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -85,8 +84,8 @@
                     <connections>
                         <outlet property="authorLabel" destination="WBW-eg-gsu" id="QBq-fI-0C5"/>
                         <outlet property="bgImageView" destination="HvS-bb-z6h" id="4Pc-0s-gbs"/>
+                        <outlet property="favoritesButton" destination="3xA-7S-j89" id="Z8J-5f-MIe"/>
                         <outlet property="menuButton" destination="Jqm-Fc-7CF" id="Lgc-bL-72G"/>
-                        <outlet property="nextButton" destination="3xA-7S-j89" id="Z8J-5f-MIe"/>
                         <outlet property="quoteLabel" destination="dV1-26-yre" id="pP6-2l-fiz"/>
                     </connections>
                 </viewController>
@@ -102,7 +101,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="AWf-Z1-q1P"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.76391744610000001" green="0.66992408039999995" blue="0.49468058349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.76391744610000001" green="0.66992408039999995" blue="0.49468058349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="lSM-bD-zpN"/>
                 </viewController>

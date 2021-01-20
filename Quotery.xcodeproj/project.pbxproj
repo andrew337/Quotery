@@ -11,6 +11,8 @@
 		840063AC258BE4C400AD5EF4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840063AB258BE4C400AD5EF4 /* SettingsViewController.swift */; };
 		840063AF258BEC8100AD5EF4 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840063AE258BEC8100AD5EF4 /* SettingsCell.swift */; };
 		840063B2258D88F800AD5EF4 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840063B1258D88F800AD5EF4 /* SettingsSection.swift */; };
+		844D054E25B7B58500D684DE /* User Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D054D25B7B58500D684DE /* User Defaults.swift */; };
+		844D055125B7B82500D684DE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D055025B7B82500D684DE /* Notifications.swift */; };
 		8489C90D25771214005096FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489C90C25771214005096FF /* AppDelegate.swift */; };
 		8489C90F25771214005096FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489C90E25771214005096FF /* SceneDelegate.swift */; };
 		8489C91125771214005096FF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489C91025771214005096FF /* HomeViewController.swift */; };
@@ -30,6 +32,8 @@
 		840063AB258BE4C400AD5EF4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		840063AE258BEC8100AD5EF4 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		840063B1258D88F800AD5EF4 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		844D054D25B7B58500D684DE /* User Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User Defaults.swift"; sourceTree = "<group>"; };
+		844D055025B7B82500D684DE /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		8489C90925771214005096FF /* Quotery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8489C90C25771214005096FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8489C90E25771214005096FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				8489C90C25771214005096FF /* AppDelegate.swift */,
+				844D054D25B7B58500D684DE /* User Defaults.swift */,
+				844D055025B7B82500D684DE /* Notifications.swift */,
 				84EF55A5258AB1F900C7CFFA /* Constants.swift */,
 				8489C90E25771214005096FF /* SceneDelegate.swift */,
 				84E7C9B42587EA2C00ECF2F2 /* Controller */,
@@ -258,6 +264,8 @@
 				8489C91125771214005096FF /* HomeViewController.swift in Sources */,
 				840063B2258D88F800AD5EF4 /* SettingsSection.swift in Sources */,
 				8489C90D25771214005096FF /* AppDelegate.swift in Sources */,
+				844D055125B7B82500D684DE /* Notifications.swift in Sources */,
+				844D054E25B7B58500D684DE /* User Defaults.swift in Sources */,
 				840063AF258BEC8100AD5EF4 /* SettingsCell.swift in Sources */,
 				8489C90F25771214005096FF /* SceneDelegate.swift in Sources */,
 				8489C927257720C2005096FF /* Utils.swift in Sources */,
