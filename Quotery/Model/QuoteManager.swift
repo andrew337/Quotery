@@ -18,7 +18,7 @@ struct QuoteManager {
     
     func performRequest(){
     //URL
-        let url = URL(string: "https://quotes-by-quovoo1.p.rapidapi.com/quotes/random?numberOfResults=1")
+        let url = URL(string: "https://quotes.rest/qod?language=en")
         
         guard url != nil else {
         print("Error")
@@ -28,13 +28,13 @@ struct QuoteManager {
         var request = URLRequest(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
     
     //Specify the header
-        let headers = [
-            "x-rapidapi-key": "7e5cc04f81mshd0483de70fbc1d5p16b2d4jsnc6d01b111ae9",
-            "x-rapidapi-host": "quotes-by-quovoo1.p.rapidapi.com",
-            
-        ]
-        
-        request.allHTTPHeaderFields = headers
+//        let headers = [
+//            "x-rapidapi-key": "7e5cc04f81mshd0483de70fbc1d5p16b2d4jsnc6d01b111ae9",
+//            "x-rapidapi-host": "quotes-by-quovoo1.p.rapidapi.com",
+//
+//        ]
+//
+//        request.allHTTPHeaderFields = headers
         
         // Specify the body
     
@@ -60,18 +60,18 @@ struct QuoteManager {
     }
     
     func parseJSON(_ quoteData: Data) -> QuoteModel? {
-        //print(String(data: quoteData, encoding: .utf8))
+     
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode([QuoteData].self, from: quoteData)
-            let quote = decodedData[0].content
-            let author = decodedData[0].author
+            let decodedData = try decoder.decode(QuoteData.self, from: quoteData)
+            let quote = decodedData.contents.quote[0].quote
+            let author = decodedData.contents.quote[0].author
             
             let quoteModel = QuoteModel(quoteText: quote, authorText: author)
             
             UserDefaults.standard.setValue(quote, forKey: Constants.Defaults.LATEST_QUOTE)
             UserDefaults.standard.setValue(author, forKey: Constants.Defaults.LATEST_AUTHOR)
-            //print(quoteModel)
+           
             return quoteModel
         } catch {
             delegate?.didFailWithError(error: error)

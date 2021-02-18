@@ -101,8 +101,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="AWf-Z1-q1P"/>
-                        <color key="backgroundColor" red="0.76391744610000001" green="0.66992408039999995" blue="0.49468058349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.76391744610000001" green="0.66992408039999995" blue="0.49468058349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="lSM-bD-zpN"/>
                 </viewController>

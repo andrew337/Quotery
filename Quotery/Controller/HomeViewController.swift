@@ -12,6 +12,8 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
     
     var quoteManager = QuoteManager()
     let userDefaults = UserDefaults()
+    
+    private var observor: NSObjectProtocol?
 
     
     
@@ -36,16 +38,22 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
         
         if userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) != nil {
             quoteLabel.text = userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) as? String
-            authorLabel.text = userDefaults.value(forKey: Constants.Defaults.LATEST_AUTHOR) as? String
+            authorLabel.text =  "Author: \(userDefaults.value(forKey: Constants.Defaults.LATEST_AUTHOR) as! String)"
         } else {
             quoteManager.performRequest()
         }
+        
+        observor = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main, using: { [unowned self] notification in
+            self.createTimer()
+        })
     
     }
     
+    func createTimer() {
+        _ = Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: false)
+    }
     
-    @IBAction func favoritesButtonPressed(_ sender: UIButton) {
-        
+    @objc func fireTimer() {
         quoteManager.performRequest()
     }
     

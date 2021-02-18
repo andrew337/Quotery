@@ -10,8 +10,16 @@ import Foundation
 
 struct QuoteData: Codable {
     
-    let content : String
-    let author : String
+    let contents: Contents
+}
+
+struct Contents: Codable {
+    let quote: [Quote]
+}
+
+struct Quote: Codable {
+    let author: String
+    let quote: String
 }
 
 

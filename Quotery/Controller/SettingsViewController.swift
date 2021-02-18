@@ -28,8 +28,8 @@ class SettingsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 60
-        tableView.backgroundColor = UIColor(red: 40/255, green: 56/255, blue: 69/255, alpha: 1)
-        
+        //tableView.backgroundColor = UIColor(red: 40/255, green: 56/255, blue: 69/255, alpha: 1)
+
         tableView.register(SettingsCell.self, forCellReuseIdentifier: reuseIdentifier)
         view.addSubview(tableView)
         tableView.frame = view.frame
@@ -40,7 +40,7 @@ class SettingsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barStyle = .black
-        navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 56/255, blue: 69/255, alpha: 1)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 128/255, green: 100/255, blue: 77/255, alpha: 1)
         navigationItem.title = "Settings"
         
         let backButton = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(backToFirst))
@@ -74,7 +74,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let view = UIView()
-        view.backgroundColor = UIColor(red: 242/255, green: 149/255, blue: 89/255, alpha: 1)
+        view.backgroundColor = UIColor(red: 216/255, green: 189/255, blue: 118/255, alpha: 1)
         
         let title = UILabel()
         title.font = UIFont.boldSystemFont(ofSize: 18)
@@ -97,7 +97,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsCell
         cell.contentView.isUserInteractionEnabled = false
-        cell.backgroundColor = UIColor(red: 184/255, green: 176/255, blue: 141/255, alpha: 1)
+        cell.backgroundColor = UIColor(red: 128/255, green: 100/255, blue: 77/255, alpha: 1)
         cell.switchControl.tag = indexPath.row
             let communications = CommunicationsOptions(rawValue: indexPath.row)
             cell.textLabel?.text = communications?.description

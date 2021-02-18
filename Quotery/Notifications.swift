@@ -26,7 +26,7 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         
         let content = UNMutableNotificationContent()
         content.title = "Quotery"
-        content.body = "View your Quote of the day"
+        content.body = "View your Quote of the Day"
         content.sound = .default
         
         var dateComponents = DateComponents(calendar: Calendar.current, hour: 12, minute: 0)
