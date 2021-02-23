@@ -14,10 +14,10 @@ struct QuoteData: Codable {
 }
 
 struct Contents: Codable {
-    let quote: [Quote]
+    let quotes: [Quotes]
 }
 
-struct Quote: Codable {
+struct Quotes: Codable {
     let author: String
     let quote: String
 }

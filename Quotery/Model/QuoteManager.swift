@@ -27,18 +27,8 @@ struct QuoteManager {
     //URL Request
         var request = URLRequest(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
     
-    //Specify the header
-//        let headers = [
-//            "x-rapidapi-key": "7e5cc04f81mshd0483de70fbc1d5p16b2d4jsnc6d01b111ae9",
-//            "x-rapidapi-host": "quotes-by-quovoo1.p.rapidapi.com",
-//
-//        ]
-//
-//        request.allHTTPHeaderFields = headers
-        
         // Specify the body
     
-
     // Set the request type
         request.httpMethod = "GET"
     // Get the URLSession
@@ -64,8 +54,8 @@ struct QuoteManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(QuoteData.self, from: quoteData)
-            let quote = decodedData.contents.quote[0].quote
-            let author = decodedData.contents.quote[0].author
+            let quote = decodedData.contents.quotes[0].quote
+            let author = decodedData.contents.quotes[0].author
             
             let quoteModel = QuoteModel(quoteText: quote, authorText: author)
             
