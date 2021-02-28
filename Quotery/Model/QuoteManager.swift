@@ -12,13 +12,21 @@ protocol QuoteManagerDelegate {
     func didFailWithError(error: Error)
 }
 
+var keys = Keys()
+
 struct QuoteManager {
     
+    
     var delegate: QuoteManagerDelegate?
+    let myApiKey = keys.apiKey
     
     func performRequest(){
     //URL
-        let url = URL(string: "https://quotes.rest/qod?language=en")
+        let url = URL(string: "https://quotes.rest/quote/random?language=en&limit=1")
+        
+        let headers = [
+            "X-TheySaidSo-Api-Secret": myApiKey
+        ]
         
         guard url != nil else {
         print("Error")
@@ -31,6 +39,8 @@ struct QuoteManager {
     
     // Set the request type
         request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
     // Get the URLSession
         let session = URLSession.shared
     // Create the data task

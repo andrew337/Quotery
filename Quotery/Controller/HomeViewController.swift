@@ -50,11 +50,12 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
     }
     
     func createTimer() {
-        _ = Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: false)
+        _ = Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
     
     @objc func fireTimer() {
         quoteManager.performRequest()
+        
     }
     
     func didUpdateQuote(_ quoteManager: QuoteManager, quote: QuoteModel) {
