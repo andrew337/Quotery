@@ -11,6 +11,8 @@ import UserNotifications
 class Notifications: NSObject, UNUserNotificationCenterDelegate {
     
     let center = UNUserNotificationCenter.current()
+    let userDefaults = UserDefaults()
+    let calender = Calendar.current
     
     func notificationsRequest() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
@@ -29,13 +31,8 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         content.body = "View your Quote of the Day"
         content.sound = .default
         
-        var dateComponents = DateComponents(calendar: Calendar.current, hour: 12, minute: 0)
         
-        if let date = UserDefaults.getDate() {
-            dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
-        }
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: true)
         
         let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
         

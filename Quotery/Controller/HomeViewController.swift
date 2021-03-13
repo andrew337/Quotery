@@ -12,9 +12,11 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
     
     var quoteManager = QuoteManager()
     let userDefaults = UserDefaults()
+    let refreshManager = RefreshManager()
+    let calender = Calendar.current
     
     private var observor: NSObjectProtocol?
-
+    
     
     
     @IBOutlet weak var bgImageView: UIImageView!
@@ -37,8 +39,9 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
         favoritesButton.setTitle(String.fontAwesomeIcon(name: .star), for: .normal)
         
         if userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) != nil {
-            quoteLabel.text = userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) as? String
-            authorLabel.text =  "Author: \(userDefaults.value(forKey: Constants.Defaults.LATEST_AUTHOR) as! String)"
+            loadDataIfNeeded { (success) in
+                print(success)
+            }
         } else {
             quoteManager.performRequest()
         }
@@ -46,15 +49,21 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
         observor = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main, using: { [unowned self] notification in
             self.createTimer()
         })
-    
+        
+        
     }
     
+    
+    
     func createTimer() {
-        _ = Timer.scheduledTimer(timeInterval: 86400, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
     }
     
     @objc func fireTimer() {
-        quoteManager.performRequest()
+        if isRefreshRequired() == true {
+            quoteManager.performRequest()
+            print("yes")
+        }
         
     }
     
@@ -76,8 +85,35 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
         let navController = UINavigationController(rootViewController: vc1)
         navController.modalPresentationStyle = .fullScreen
         self.present(navController, animated: true, completion: nil)
-    
+        
     }
+    func loadDataIfNeeded(completion: (Bool) -> Void) {
+        
+        if isRefreshRequired() {
+            quoteManager.performRequest()
+            quoteLabel.text = userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) as? String
+            authorLabel.text =  "Author: \(userDefaults.value(forKey: Constants.Defaults.LATEST_AUTHOR) as! String)"
+            completion(true)
+        } else {
+            quoteLabel.text = userDefaults.value(forKey: Constants.Defaults.LATEST_QUOTE) as? String
+            authorLabel.text =  "Author: \(userDefaults.value(forKey: Constants.Defaults.LATEST_AUTHOR) as! String)"
+            completion(false)
+        }
+    }
+    
+    func isRefreshRequired() -> Bool {
+        
+        guard let lastRefreshDate = userDefaults.object(forKey: Constants.Defaults.LATEST_REQUEST_TIME) as? Date else {
+            return true
+        }
+        
+        if let diff = calender.dateComponents([.minute], from: lastRefreshDate, to: Date()).minute, diff > 2 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     
 }
 

@@ -71,6 +71,9 @@ struct QuoteManager {
             
             UserDefaults.standard.setValue(quote, forKey: Constants.Defaults.LATEST_QUOTE)
             UserDefaults.standard.setValue(author, forKey: Constants.Defaults.LATEST_AUTHOR)
+            UserDefaults.standard.setValue(Date(), forKey: Constants.Defaults.LATEST_REQUEST_TIME)
+            
+            //print(Date())
            
             return quoteModel
         } catch {

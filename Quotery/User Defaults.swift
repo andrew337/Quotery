@@ -17,7 +17,7 @@ extension UserDefaults {
                 return date
             }
         }
-        
+
         return nil
     }
     

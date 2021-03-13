@@ -25,6 +25,7 @@
 		84E7C9AE2580605D00ECF2F2 /* QuoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7C9AD2580605D00ECF2F2 /* QuoteData.swift */; };
 		84E7C9B12586D43F00ECF2F2 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7C9B02586D43F00ECF2F2 /* QuoteModel.swift */; };
 		84EF55A6258AB1F900C7CFFA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF55A5258AB1F900C7CFFA /* Constants.swift */; };
+		84F3C0F025F2FF3A0063D668 /* RefreshManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3C0EF25F2FF3A0063D668 /* RefreshManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		84E7C9AD2580605D00ECF2F2 /* QuoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteData.swift; sourceTree = "<group>"; };
 		84E7C9B02586D43F00ECF2F2 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
 		84EF55A5258AB1F900C7CFFA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		84F3C0EF25F2FF3A0063D668 /* RefreshManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshManager.swift; sourceTree = "<group>"; };
 		D55BEE33844DEAD9A7C57883 /* Pods_Quotery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quotery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 			children = (
 				8489C90C25771214005096FF /* AppDelegate.swift */,
 				844D054D25B7B58500D684DE /* User Defaults.swift */,
+				84F3C0EF25F2FF3A0063D668 /* RefreshManager.swift */,
 				844D055025B7B82500D684DE /* Notifications.swift */,
 				847ACC9C25EC155500F6EA15 /* Keys.swift */,
 				84EF55A5258AB1F900C7CFFA /* Constants.swift */,
@@ -268,6 +271,7 @@
 				840063B2258D88F800AD5EF4 /* SettingsSection.swift in Sources */,
 				8489C90D25771214005096FF /* AppDelegate.swift in Sources */,
 				844D055125B7B82500D684DE /* Notifications.swift in Sources */,
+				84F3C0F025F2FF3A0063D668 /* RefreshManager.swift in Sources */,
 				844D054E25B7B58500D684DE /* User Defaults.swift in Sources */,
 				840063AF258BEC8100AD5EF4 /* SettingsCell.swift in Sources */,
 				8489C90F25771214005096FF /* SceneDelegate.swift in Sources */,
@@ -424,13 +428,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8AD4NX7R6N;
 				INFOPLIST_FILE = Quotery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewHolmes.Quotery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -445,13 +450,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8AD4NX7R6N;
 				INFOPLIST_FILE = Quotery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrewHolmes.Quotery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -12,6 +12,7 @@ class Constants {
     struct Defaults {
         static let LATEST_QUOTE = "lastQuote"
         static let LATEST_AUTHOR = "lastAuthor"
+        static let LATEST_REQUEST_TIME = "lasttime"
     }
     
 }
